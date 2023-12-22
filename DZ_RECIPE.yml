@@ -1,0 +1,19 @@
+dev:
+  commands:
+  - command: dotnet restore
+    directory: microservices-demo
+    name: install cmd
+  - command: dotnet restore
+    directory: microservices-demo/src
+    name: install cmd
+  - command: terraform init
+    directory: microservices-demo/terraform
+    name: install cmd
+  name: ""
+  packages:
+  - nixpkgs.dotnet-sdk
+  - nixpkgs.helm
+  - nixpkgs.kubernetes
+  - nixpkgs.terraform
+  repos:
+  - https://github.com/GoogleCloudPlatform/microservices-demo
